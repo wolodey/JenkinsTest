@@ -8,7 +8,7 @@ pipeline {
     agent { 
         label 'master'
         }
-		// pollSCM - опрашивай SCM
+		// pollSCM - опрашивай SCM в новый коммит
 		//trigger звездочки означают спрашивай каждую минуту
 	triggers { pollSCM('* * * * *') }
     options {
