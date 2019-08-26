@@ -10,7 +10,7 @@ pipeline {
         }
 		// pollSCM - опрашивай SCM в новый коммит
 		//trigger звездочки означают спрашивай каждую минуту
-	triggers { pollSCM('* * * * *') }
+	 triggers { pollSCM('* * * * *') }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
@@ -20,7 +20,7 @@ pipeline {
             steps {
 				echo " ============ start building image ================"
 				dir ('docker/toolbox') {
-					sh 'docker build -t toolbox:latest . '
+					sh 'docker build -t wsteinle/toolbox:latest . '
 				}                
             }
         }
